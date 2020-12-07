@@ -6,6 +6,8 @@ lc=[]
 giocatore = []
 personaggio = []
 
+
+# Inizializzazione procedura main
 def main():
     print("Benvenuto in Gaba, un gioco rpg solo in linea di codice, se vuoi la grafica paga! Comunque apparte gli scherzi spero che il viaggio che stai per fare ti piaccia.\nP.S. ricordati di non morire, hai solo una vita.")
     time.sleep(4)
