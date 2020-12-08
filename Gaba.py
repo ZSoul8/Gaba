@@ -7,27 +7,42 @@ lc=[]
 
 #lista personaggio: 0 nome,1 genere,2 razza,3 classe,4 livello,5 esperienza,6 soldi
 personaggio = []
-
-#lista statistiche: 0 vita,1 attacco,2 agilità,3 difesa,4 intelligenza,5 mana
-statistiche = []
-
-#lista armatura: 0 elmo,1 corpetto,2 gambali,3 stivali
-armatura = []
-
-#lista armi: 0 arma primaria,1 arma secondaria
-armi = []
-
-#lista anelli: max[10]
-anelli = []
-
+#lista statistiche_giocatore: 0 vita,1 attacco,2 agilità,3 difesa,4 intelligenza,5 mana
+statistiche_giocatore = []
+#lista armatura_giocatore: 0 elmo,1 corpetto,2 gambali,3 stivali
+armatura_giocatore = []
+#lista armi_giocatore: 0 arma primaria,1 arma secondaria
+armi_giocatore = []
+#lista anelli_giocatore: max[10]
+anelli_giocatore = []
 #lista equipaggiamento:0 lista armatura,1 lista armi,2 lista anelli
-equipaggiamento = [armatura,armi,anelli]
-
+equipaggiamento = [armatura_giocatore,armi_giocatore,anelli_giocatore]
 #lista inventario: max[50]
 inventario = [] 
-
 #lista giocatore: 0 lista personaggio,1 lista statistiche,2 lista equipaggiamento,3 lista inventario
-giocatore = [personaggio,statistiche,equipaggiamento,inventario]
+giocatore = [personaggio,statistiche_giocatore,equipaggiamento,inventario]
+
+#lista id: 0 nome,1 attacco,2 agilità,3 difesa,4 mana
+#a sta per guerriero
+a000= ["spada arrugginita",10,0,0,0]
+#b sta per assassino
+b000= ["pugnale consumato",7,0,0,0]
+#c sta per mago
+c000= ["bastone scrauso",5,0,0,10]
+#d sta per arciere
+d000= ["arco scrauso",7,0,0,0]
+
+#lista armi guerriero
+armi_guerriero = [a000]
+#lista armi assassino
+armi_assassino = [b000]
+#lista armi mago
+armi_mago = [c000]
+#lista armi arciere
+armi_arciere = [d000]
+
+#lista armi:contiene tutte le armi
+armi = []
 
 # Inizializzazione procedura main
 def main():
@@ -117,21 +132,82 @@ def main():
         classe = input().lower().strip()
         if classe == "1" or classe == "guerriero":
             personaggio.append("guerriero")
+            #aggiunta equipaggiamento
+            armi_giocatore.append(armi_guerriero[000])
+            #aggiunta statistiche
+            #vita
+            statistiche_giocatore.append(100)
+            #attacco
+            statistiche_giocatore.append(10+armi_giocatore[0][1])
+            #agilità
+            statistiche_giocatore.append(10+armi_giocatore[0][2])
+            #difesa
+            statistiche_giocatore.append(20+armi_giocatore[0][3])
+            #intelligenza
+            statistiche_giocatore.append(10)
+            #mana
+            statistiche_giocatore.append(0+armi_giocatore[0][4])
             lc[0] = True
         elif classe == "2" or classe == "assassino":
             personaggio.append("assassino")
+            #aggiunta equipaggiamento
+            armi_giocatore.append(armi_assassino[000])
+            #aggiunta statistiche
+            #vita
+            statistiche_giocatore.append(100)
+            #attacco
+            statistiche_giocatore.append(10+armi_giocatore[0][1])
+            #agilità
+            statistiche_giocatore.append(10+armi_giocatore[0][2])
+            #difesa
+            statistiche_giocatore.append(20+armi_giocatore[0][3])
+            #intelligenza
+            statistiche_giocatore.append(10)
+            #mana
+            statistiche_giocatore.append(0+armi_giocatore[0][4])
             lc[0] = True
         elif classe == "3" or classe == "mago":
             personaggio.append("mago")
+            #aggiunta equipaggiamento
+            armi_giocatore.append(armi_mago[000])
+            #aggiunta statistiche
+            #vita
+            statistiche_giocatore.append(100)
+            #attacco
+            statistiche_giocatore.append(10+armi_giocatore[0][1])
+            #agilità
+            statistiche_giocatore.append(10+armi_giocatore[0][2])
+            #difesa
+            statistiche_giocatore.append(20+armi_giocatore[0][3])
+            #intelligenza
+            statistiche_giocatore.append(10)
+            #mana
+            statistiche_giocatore.append(0+armi_giocatore[0][4])
             lc[0] = True
         elif classe == "4" or classe == "arciere":
             personaggio.append("arciere")
+            #aggiunta equipaggiamento
+            armi_giocatore.append(armi_arciere[000])
+            #aggiunta statistiche
+            #vita
+            statistiche_giocatore.append(100)
+            #attacco
+            statistiche_giocatore.append(10+armi_giocatore[0][1])
+            #agilità
+            statistiche_giocatore.append(10+armi_giocatore[0][2])
+            #difesa
+            statistiche_giocatore.append(20+armi_giocatore[0][3])
+            #intelligenza
+            statistiche_giocatore.append(10)
+            #mana
+            statistiche_giocatore.append(0+armi_giocatore[0][4])
             lc[0] = True
         else:
             os.system("cls")
             print("Inserisci una classe disponibile")
             time.sleep(1)
     os.system("cls")
-               
+    print(giocatore)
+
 if __name__ == "__main__":
     main()
